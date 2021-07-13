@@ -1,0 +1,80 @@
+.html, .body{
+    margin:0px;
+    padding:0px;
+}
+
+.postit-whole{
+    width:14vw;
+    height:14vw;
+    min-width: 10vw;
+    min-height:0.5vw;
+}
+
+.postit-header{
+    width:13vw;
+    height:1vw;
+    min-width: 10vw;
+    min-height:0.5vw;
+    background-color: #b177ff;
+    padding: 0.5vw;
+    position:relative;
+}
+
+.postit-main{
+    width:13vw;
+    height:11vw;
+    min-width: 10vw;
+    min-height:0.5vw;
+    background-color: #c79cff;
+    padding: 0.5vw;
+    position:absolute;
+}
+
+
+h1{
+    margin:0px;
+}
+
+.close{
+    float:right;
+    font-weight:bold;
+    position: absolute;
+    top:1px;
+    right:3%;
+    font-size:1.5vw;
+
+
+}
+
+.colors{
+    float:left;
+    position:absolute;
+    bottom:0px;
+    font-size:1.5vw;
+}
+
+.parent{
+    position:absolute;
+    z-index:2;
+    width:14vw;
+}
+
+.child{
+    list-style-type: none;
+    background-color: pink;
+    display: none;
+    margin:0px;
+}
+
+li{
+    font-size: 20px;
+}
+
+
+i{
+  display: inline-block;
+}
+
+button{
+    style:none;
+}
