@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css"></link>
     <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 </head>
     <title>Board</title>
 </head>
@@ -13,35 +14,34 @@
     <div class="postit-whole">
         <div class="postit-header">
             <a class='close'>&#215</a>
-            <a class="colors" onclick='dropdown()'>&#9776</a>
+            <a class="colors">&#9776</a>
         </div>
-        <div class="parent">
-            <div>
-                <ul class="child">
-                    <li onclick="pink()" class="pink">Pink</li>
-                    <li onclick="purple()" class="purple">Purple</li>
-                </ul>
-            </div>
-        </div>       
+            <div class="parent">
+                    <ul class="child">
+                        <li  class="pink">&#9744 Pink</li>
+                        <li  class="purple">&#9746 Purple</li>
+                    </ul>
+     
+            </div>       
         <div class="postit-main">
             <div class="postit-text">
                 <h1 contenteditable="true">test</h1>
             </div>
         </div
     </div>
-
+    </div>
     <div class="postit-whole">
         <div class="postit-header">
             <a class='close'>&#215</a>
-            <a class="colors" onclick='dropdown()'>&#9776</a>
+            <a class="colors">&#9776</a>
         </div>
         <div class="parent">
-            <div>
+   
                 <ul class="child">
-                    <li onclick="pink()" class="pink">Pink</li>
-                    <li onclick="purple()" class="purple">Purple</li>
+                    <li class="pink">&#9744 Pink</li>
+                    <li class="purple">&#9746 Purple</li>
                 </ul>
-            </div>
+
         </div>       
         <div class="postit-main">
             <div class="postit-text">
@@ -50,7 +50,55 @@
         </div>
     </div>
 
-   
-
 </body>
 </html>
+
+<script>
+    var parents= document.getElementsByClassName('parent');
+    var btns = document.getElementsByClassName("colors");
+    for(let i=0;i<btns.length;i++){
+        btns[i].onclick = function() {
+            if(parents[i].style.display == "none"){
+                parents[i].style.display = "block";
+            }
+            else{
+                parents[i].style.display = "none";
+            }
+        }
+    }
+</script>
+
+<script>
+    //pink
+     var purple = document.getElementsByClassName("purple");
+     var pink = document.getElementsByClassName("pink");
+     var pinkheader = document.getElementsByClassName("postit-header");
+     var pinkmain = document.getElementsByClassName("postit-main");
+     for(let i=0;i<pink.length;i++){
+        pink[i].onclick = function() {
+            pinkheader[i].style.backgroundColor = '#fd9cff';
+            pinkmain[i].style.backgroundColor = '#fdc1ff';
+            purple[i].innerHTML = "&#9744 Purple";
+            pink[i].innerHTML = "&#9746 Pink";
+        }
+           
+    }
+
+</script>
+
+<script>
+    //purple
+    var pink = document.getElementsByClassName("pink");
+    var purple = document.getElementsByClassName("purple");
+    var purpleheader = document.getElementsByClassName("postit-header");
+    var purplemain = document.getElementsByClassName("postit-main");
+    for(let i=0;i<purple.length;i++){
+       purple[i].onclick = function() {
+            purpleheader[i].style.backgroundColor = '#b177ff';
+            purplemain[i].style.backgroundColor = '#c79cff';
+            pink[i].innerHTML = "&#9744 Pink";  
+            purple[i].innerHTML = "&#9746 Purple";
+   }
+}
+</script>
+
