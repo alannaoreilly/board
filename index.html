@@ -10,38 +10,39 @@
 </head>
     <title>Board</title>
 </head>
-<body>
-    <div class="postit-whole">
+<body onload="checkEdits()" id='edit'>
+    <div onclick="addpostit()">add</div>
+
+
+    <div id="postit" class="postit">
         <div class="postit-header">
             <a class='close'>&#215</a>
             <a class="colors">&#9776</a>
         </div>
-            <div class="parent">
-                    <ul class="child">
-                        <li  class="pink">&#9744 Pink</li>
-                        <li  class="purple">&#9746 Purple</li>
-                    </ul>
-     
-            </div>       
-        <div class="postit-main">
+        <div class="parent">
+                <ul class="child">
+                    <li  class="pink">&#9744 Pink</li>
+                    <li  class="purple">&#9746 Purple</li>
+                </ul>
+        </div>       
+        <div id="postit" class="postit-main">
             <div class="postit-text">
                 <h1 contenteditable="true">test</h1>
             </div>
         </div
     </div>
     </div>
-    <div class="postit-whole">
+
+    <div  class="postit">
         <div class="postit-header">
             <a class='close'>&#215</a>
             <a class="colors">&#9776</a>
         </div>
         <div class="parent">
-   
-                <ul class="child">
-                    <li class="pink">&#9744 Pink</li>
-                    <li class="purple">&#9746 Purple</li>
-                </ul>
-
+            <ul class="child">
+                <li class="pink">&#9744 Pink</li>
+                <li class="purple">&#9746 Purple</li>
+            </ul>
         </div>       
         <div class="postit-main">
             <div class="postit-text">
@@ -83,7 +84,6 @@
         }
            
     }
-
 </script>
 
 <script>
@@ -99,6 +99,31 @@
             pink[i].innerHTML = "&#9744 Pink";  
             purple[i].innerHTML = "&#9746 Purple";
    }
+}
+</script>
+
+<script>
+    function addpostit(){
+    // Get the element
+    var elem = document.querySelector('#postit');
+    // Create a copy of it
+    var clone = elem.cloneNode(true);
+    // Inject it into the DOM
+    elem.after(clone);
+    }
+
+</script>
+
+
+<script>
+    var close = document.getElementsByClassName("close");
+     var elem = document.getElementsByClassName('postit');
+     for(let i=0;i<close.length;i++){
+        for(let j=0;j<elem.length;i++){
+        close[i].onclick = function() {
+            elem[j].remove();
+        }
+    }
 }
 </script>
 
